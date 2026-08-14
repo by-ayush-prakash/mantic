@@ -65,7 +65,9 @@ h1.pt{font-weight:400;font-size:clamp(2.25rem,4.4vw,3.25rem);line-height:1.08;
 p.body{max-width:38rem;color:var(--gray);line-height:1.8;margin:0 0 1.25rem}
 p.body:last-child{margin-bottom:0}
 p.body strong{color:var(--ink);font-weight:500}
-.mark{background:var(--grn);padding:.04em .22em}
+.mark{background:var(--grn);padding:.04em .22em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.standalone{margin:1.6rem 0 0!important;color:var(--ink)!important}
+.standalone .mark{white-space:nowrap}
 .mark-l{background:var(--lav);padding:.04em .22em}
 
 .blocks{max-width:44rem}
@@ -115,6 +117,7 @@ footer{padding:2.25rem 0 2.5rem}
       <h2>The idea</h2>
       <p><span class="mark">Contrarian and specific.</span> If a reader already agrees with the first line, there is no book in it. We want the argument that gets you disagreed with at dinner, then turns out to be right.</p>
       <p>It does not have to be finished. Most of what reaches us is a nugget rather than a scoped book, and that is the stage we prefer to see it.</p>
+      <p>In special cases we will work with an author on a book that is already published.</p>
     </section>
     <section>
       <h2>The author</h2>
@@ -124,11 +127,12 @@ footer{padding:2.25rem 0 2.5rem}
     <section>
       <h2>Any subject</h2>
       <p>We do not keep a list of topics. A subject does not make a book, a claim does. Monetary policy, prayer, semiconductors, grief. We read them all the same way and we apply the same test to each.</p>
-      <p>What we are not looking for is the trendy argument. A trend borrows its force from the moment and gives it back when the moment passes. We want the argument that is internally powerful, the one that would still hold if nobody were talking about the subject at all. <span class="mark">It should hold the same in five minutes as in five hundred years.</span></p>
+      <p>What we are not looking for is the trendy argument. A trend borrows its force from the moment and gives it back when the moment passes. We want the argument that is internally powerful, the one that would still hold if nobody were talking about the subject at all.</p>
+      <p class="standalone"><span class="mark">It should hold the same in five minutes as in five hundred years.</span></p>
     </section>
     <section>
       <h2>How to start</h2>
-      <p>Send the idea while it is still small. A page or two, one claim, in your own words. Not a manuscript, not a proposal, no comparable titles.</p>
+      <p>Send the idea while it is still small. A page or two, one claim, in your own words.</p>
       <p>We publish books. Only books, and few of them.</p>
     </section>
   </div>
