@@ -4,143 +4,97 @@
 <meta name="theme-color" content="#FFFFFF">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Archivo:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#FFFFFF;
-  --ink:#1A1A1A;
+  --ink:#111111;
   --gray:#8C8C8C;
   --gray-dim:#B4B4B4;
-  --rule:#E6E6E6;
+  --rule:#E9E9E9;
+  --grn:#8DE0AE;
+  --lav:#C6B6FF;
+  --blu:#7BA4FF;
   --green:#3D8A6B;
-  --green-wash:#E9F3EF;
-  --display:"Playfair Display",Georgia,serif;
-  --serif:"EB Garamond",Georgia,serif;
+  --serif:"Newsreader",Georgia,serif;
+  --grot:"Archivo","Inter",Helvetica,sans-serif;
   --sans:"Inter",Helvetica,Arial,sans-serif;
 }
-*{box-sizing:border-box;}
-html{-webkit-text-size-adjust:100%;}
-body{
-  margin:0;background:var(--bg);color:var(--ink);
-  font-family:var(--serif);font-size:19px;line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
-a{color:inherit;text-decoration:none;}
-::selection{background:var(--green);color:#fff;}
-.wrap{max-width:72rem;margin:0 auto;padding:0 2.5rem;}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--serif);font-size:19px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--lav);color:var(--ink)}
+.wrap{max-width:72rem;margin:0 auto;padding:0 2.5rem}
 
-/* header */
-header{padding:2rem 0;}
-.hd{display:flex;justify-content:space-between;align-items:baseline;gap:2rem;flex-wrap:wrap;}
-.hd .home{font-family:var(--display);font-size:1.125rem;letter-spacing:.02em;}
-.hd .meta{font-family:var(--sans);font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gray);display:flex;gap:2rem;flex-wrap:wrap;}
-.hd .meta a:hover{color:var(--ink);}
+header{padding:2rem 0}
+.hd{display:flex;justify-content:space-between;align-items:baseline;gap:2rem;flex-wrap:wrap}
+.hd .home{font-family:var(--grot);font-weight:700;font-size:.9375rem;letter-spacing:-.005em;text-transform:uppercase}
+.hd .meta{font-family:var(--sans);font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gray);display:flex;gap:2rem;flex-wrap:wrap}
+.hd .meta a{padding-bottom:2px;border-bottom:1px solid transparent;transition:.18s}
+.hd .meta a:hover{color:var(--ink);border-bottom-color:var(--blu)}
 
-/* homepage sentence */
-.stage{min-height:76vh;display:flex;align-items:center;justify-content:center;padding:3rem 0 5rem;}
+/* ---------- homepage sentence ---------- */
+.stage{min-height:72vh;display:flex;align-items:center;justify-content:center;padding:2rem 0 5rem}
 .sentence{
-  font-family:var(--display);font-weight:400;
-  font-size:clamp(1.75rem,4.1vw,3.25rem);
-  line-height:1.28;letter-spacing:-.012em;
-  text-align:center;max-width:48rem;margin:0;text-wrap:balance;
-}
-.sentence a{
-  box-shadow:inset 0 -2px 0 var(--green);
-  padding-bottom:1px;transition:background-color .18s,box-shadow .18s;
-}
-.sentence a:hover{background:var(--green-wash);box-shadow:inset 0 -2px 0 var(--green);}
-.inst{
-  font-family:var(--sans);font-weight:500;
-  font-size:.44em;letter-spacing:.1em;text-transform:uppercase;
-  vertical-align:.14em;
-}
-.thumb{
-  display:inline-block;width:.6em;height:.86em;background:#EDEAE3;
-  vertical-align:-.07em;margin-right:.24em;
-  border-left:.09em solid #6E6A63;
-  box-shadow:0 .04em .12em rgba(0,0,0,.28);
-}
+  font-weight:400;font-size:clamp(1.5rem,2.9vw,2.375rem);
+  line-height:1.24;letter-spacing:-.006em;text-align:center;
+  max-width:41rem;margin:0 auto}
+.lock{font-family:var(--grot);font-weight:700;font-size:.60em;letter-spacing:-.005em;
+  text-transform:uppercase;vertical-align:.055em;white-space:nowrap}
+.sentence a{box-shadow:inset 0 -.07em 0 var(--blu);transition:background-color .18s}
+.sentence a:hover{background:#EDF3FF}
 
-/* interior pages */
-.page{padding:4rem 0 7rem;}
-h1.pt{font-family:var(--display);font-weight:400;font-size:clamp(2.5rem,5vw,3.75rem);line-height:1.04;letter-spacing:-.015em;margin:0 0 3.5rem;}
-.lede{font-size:1.375rem;line-height:1.55;max-width:38rem;color:var(--ink);margin:0 0 3rem;}
-p.body{max-width:38rem;color:var(--gray);line-height:1.8;margin:0 0 1.25rem;}
-p.body:last-child{margin-bottom:0;}
-p.body strong{color:var(--ink);font-weight:500;}
-.sub{font-family:var(--sans);font-size:.6875rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin:0 0 1.5rem;}
-hr.r{border:0;border-top:1px solid var(--rule);margin:4.5rem 0;}
+.p{display:inline-block;font-family:var(--sans);font-weight:600;
+  font-size:.40em;line-height:1;letter-spacing:.005em;
+  padding:.62em 1.25em .68em;border-radius:999px;
+  vertical-align:.30em;margin:0 .1em;
+  transition:transform .25s cubic-bezier(.2,.8,.3,1)}
+.we{background:var(--grn);transform:rotate(-4deg) translateY(-.04em)}
+.us{background:var(--lav);transform:rotate(5deg) translateY(.03em)}
+.sentence:hover .we{transform:rotate(-8deg) translateY(-.09em)}
+.sentence:hover .us{transform:rotate(9deg) translateY(.07em)}
 
-/* stages */
-.stages{list-style:none;margin:0;padding:0;max-width:46rem;}
-.stages li{display:grid;grid-template-columns:3rem 1fr;gap:2rem;padding:2.25rem 0;border-bottom:1px solid var(--rule);}
-.stages li:first-child{border-top:1px solid var(--rule);}
-.stages .n{font-family:var(--sans);font-size:.6875rem;letter-spacing:.14em;color:var(--green);padding-top:.8rem;}
-.stages h3{font-family:var(--display);font-weight:400;font-size:1.75rem;line-height:1.15;margin:0 0 .55rem;}
-.stages p{margin:0;color:var(--gray);font-size:1rem;line-height:1.75;max-width:46ch;}
+/* ---------- interior ---------- */
+.page{padding:3.5rem 0 7rem}
+h1.pt{font-weight:400;font-size:clamp(2.25rem,4.4vw,3.25rem);line-height:1.08;
+  letter-spacing:-.015em;margin:0 0 3rem}
+.lede{font-size:1.3125rem;line-height:1.55;max-width:38rem;margin:0 0 3rem}
+p.body{max-width:38rem;color:var(--gray);line-height:1.8;margin:0 0 1.25rem}
+p.body:last-child{margin-bottom:0}
+p.body strong{color:var(--ink);font-weight:500}
+.mark{background:var(--grn);padding:.04em .22em}
+.mark-l{background:var(--lav);padding:.04em .22em}
 
-/* format table */
-.fmt{margin:0;max-width:46rem;}
-.fmt > div{display:grid;grid-template-columns:9rem 9rem 1fr;gap:2rem;padding:1.15rem 0;border-bottom:1px solid var(--rule);align-items:baseline;}
-.fmt > div:first-child{border-top:1px solid var(--rule);}
-.fmt dt{font-family:var(--sans);font-size:.625rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);margin:0;}
-.fmt .len{font-size:.9375rem;color:var(--green);}
-.fmt dd{margin:0;color:var(--gray);font-size:1rem;}
+.blocks{max-width:44rem}
+.blocks section{padding:2.75rem 0;border-bottom:1px solid var(--rule)}
+.blocks section:first-child{border-top:1px solid var(--rule)}
+.blocks h2{font-weight:500;font-size:1.75rem;line-height:1.15;margin:0 0 .8rem;letter-spacing:-.01em}
+.blocks p{margin:0 0 1rem;color:var(--gray);line-height:1.8}
+.blocks p:last-child{margin-bottom:0}
+.blocks p strong{color:var(--ink);font-weight:500}
 
-/* subjects */
-.subj{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5rem;max-width:60rem;}
-.subj > div{padding-top:1.5rem;border-top:2px solid var(--ink);}
-.subj h4{font-family:var(--display);font-weight:400;font-size:1.5rem;margin:0 0 .8rem;}
-.subj p{margin:0;color:var(--gray);font-size:.9375rem;line-height:1.75;}
+.cta{display:inline-block;margin-top:3rem;font-size:1.4375rem;
+  box-shadow:inset 0 -.06em 0 var(--blu);padding-bottom:.15rem;transition:.2s}
+.cta:hover{background:#EDF3FF}
 
-/* book */
-.bk{display:grid;grid-template-columns:19rem minmax(0,1fr);gap:4rem;align-items:start;max-width:58rem;}
-.cover{background:#EDEAE3;aspect-ratio:1/1.48;display:flex;flex-direction:column;align-items:center;
-  padding:4.5rem 2rem 2.5rem;text-align:center;box-shadow:0 1px 2px rgba(0,0,0,.06),0 18px 40px -22px rgba(0,0,0,.35);}
-.cover-t{font-family:var(--display);font-size:1.375rem;line-height:1.24;text-transform:uppercase;}
-.cover-s{font-size:.75rem;line-height:1.5;color:#6E6A63;margin-top:1.1rem;}
-.cover-r{width:2.75rem;height:1px;background:#A9A49B;margin:auto 0 1.1rem;}
-.cover-a{font-family:var(--sans);font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:#4A4640;}
-.status{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--sans);font-size:.625rem;
-  letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:1.4rem;}
-.status .dot{width:5px;height:5px;border-radius:50%;background:var(--green);}
-.bk h2{font-family:var(--display);font-weight:400;font-size:clamp(1.875rem,3vw,2.5rem);line-height:1.1;margin:0 0 .5rem;}
-.bk .st{font-size:1.25rem;color:var(--gray);margin:0 0 1.4rem;}
-.bk .by{font-family:var(--sans);font-size:.625rem;letter-spacing:.22em;text-transform:uppercase;margin:0 0 2rem;}
-
-.cta{display:inline-block;margin-top:3rem;font-family:var(--display);font-size:1.5rem;
-  box-shadow:inset 0 -1px 0 var(--rule);padding-bottom:.2rem;transition:.2s;}
-.cta:hover{color:var(--green);box-shadow:inset 0 -1px 0 var(--green);}
-
-footer{padding:3rem 0 3.5rem;border-top:1px solid var(--rule);}
+footer{padding:3rem 0 3.5rem;border-top:1px solid var(--rule)}
 .ft{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;
-  font-family:var(--sans);font-size:.625rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gray-dim);}
-.ft a:hover{color:var(--green);}
+  font-family:var(--sans);font-size:.625rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gray-dim)}
+.ft a:hover{color:var(--ink)}
 
 @media (max-width:820px){
-  body{font-size:18px;}
-  .wrap{padding:0 1.5rem;}
-  .stage{min-height:auto;padding:2rem 0 4rem;}
-  .sentence{text-align:left;}
-  .subj{grid-template-columns:1fr 1fr;gap:2rem;}
-  .bk{grid-template-columns:1fr;gap:2.5rem;}
-  .cover{max-width:14rem;}
-  .stages li{grid-template-columns:1fr;gap:.5rem;}
-  .stages .n{padding-top:0;}
-  .fmt > div{grid-template-columns:1fr;gap:.3rem;}
-  .page{padding:2rem 0 4rem;}
-  h1.pt{margin-bottom:2.5rem;}
+  body{font-size:18px}
+  .wrap{padding:0 1.5rem}
+  .hd{flex-direction:column;align-items:flex-start;gap:.9rem}
+  .hd .meta{gap:1.25rem}
+  .stage{min-height:auto;padding:1.5rem 0 3.5rem}
+  .sentence{text-align:left;font-size:1.5rem;line-height:1.3}
+  .page{padding:1.5rem 0 4rem}
+  h1.pt{margin-bottom:2.25rem}
 }
-@media (max-width:520px){ .subj{grid-template-columns:1fr;} }
-
-/* look-for blocks */
-.blocks{max-width:44rem;}
-.blocks section{padding:2.75rem 0;border-bottom:1px solid var(--rule);}
-.blocks section:first-child{border-top:1px solid var(--rule);}
-.blocks h2{font-family:var(--display);font-weight:400;font-size:1.875rem;line-height:1.15;margin:0 0 .8rem;}
-.blocks p{margin:0 0 1rem;color:var(--gray);line-height:1.8;}
-.blocks p:last-child{margin-bottom:0;}
-.blocks p strong{color:var(--ink);font-weight:500;}
 
 </style>
 <title>What we look for &middot; Mantic Publishing</title>
@@ -156,33 +110,28 @@ footer{padding:3rem 0 3.5rem;border-top:1px solid var(--rule);}
 <main class="page"><div class="wrap">
   <h1 class="pt">What we<br>look for</h1>
   <p class="lede">A claim, not a topic. Something most people currently believe that you think is wrong, and can show is wrong.</p>
-
   <div class="blocks">
     <section>
       <h2>The idea</h2>
-      <p>Contrarian and specific. If a reader already agrees with the first line, there is no book in it. We want the argument that gets you disagreed with at dinner, then turns out to be right.</p>
+      <p><span class="mark">Contrarian and specific.</span> If a reader already agrees with the first line, there is no book in it. We want the argument that gets you disagreed with at dinner, then turns out to be right.</p>
       <p>It does not have to be finished. Most of what reaches us is a nugget rather than a scoped book, and that is the stage we prefer to see it.</p>
     </section>
-
     <section>
       <h2>The author</h2>
-      <p><strong>Someone who wants to be argued with.</strong> We break and build the idea with you. We push on the weak joint, ask where the evidence actually came from, and keep going until the argument holds or it does not.</p>
+      <p><span class="mark-l">Someone who wants to be argued with.</span> We break and build the idea with you. We push on the weak joint, ask where the evidence actually came from, and keep going until the argument holds or it does not.</p>
       <p>What gets published is rarely what arrived. If that reads as interference, we are the wrong press. If it reads as the reason to write to us at all, write.</p>
     </section>
-
     <section>
       <h2>The subjects</h2>
       <p>Geopolitics, technology, society and spirituality. We care most about where they cross: the theology inside a trading system, the foreign policy inside a chip, the social order inside a model's training data.</p>
       <p>Anyone can write about one of these. We are looking for writers who can hold two at once.</p>
     </section>
-
     <section>
       <h2>How to start</h2>
       <p>Send the idea while it is still small. A page or two, one claim, in your own words. Not a manuscript, not a proposal, no comparable titles.</p>
       <p>We publish books. Only books, and few of them.</p>
     </section>
   </div>
-
   <a class="cta" href="mailto:publishme@manticpublishing.com?subject=Mantic%20Publishing%20%E2%80%94%20An%20idea">publishme@manticpublishing.com</a>
 </div></main>
 <footer><div class="wrap ft">
