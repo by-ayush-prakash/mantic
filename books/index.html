@@ -114,6 +114,19 @@ footer{padding:2.25rem 0 2.5rem}
 .book-actions{display:flex;justify-content:center;align-items:stretch;gap:12px;margin-top:clamp(26px,4vw,48px)}
 .book-buy{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 24px;border:1px solid var(--ink);border-radius:999px;background:var(--ink);color:var(--bg);font:400 .78125rem/1.5 var(--sans);letter-spacing:.02em}
 .book-buy:hover{background:var(--bg);color:var(--ink)}
+.book-picker{position:relative;display:flex}
+.book-picker summary{cursor:pointer;list-style:none}
+.book-picker summary::-webkit-details-marker{display:none}
+.book-picker[open] summary{background:var(--bg);color:var(--ink)}
+.book-stores{position:absolute;z-index:1;left:50%;bottom:100%;transform:translateX(-50%);padding-bottom:10px}
+.book-store-flags{display:flex;gap:4px;padding:6px;background:var(--bg);border:1px solid var(--rule);border-radius:999px;box-shadow:0 6px 24px #1112;animation:book-stores-in .22s ease-out both}
+.book-store-flags a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;font-size:1.25rem;transition:background .18s,transform .18s}
+.book-store-flags a:hover,.book-store-flags a:focus-visible{background:#EDF3FF;transform:translateY(-2px)}
+@keyframes book-stores-in{from{opacity:0;transform:translateY(7px) scale(.95)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){
+  .book-store-flags{animation:none}
+  .book-store-flags a{transition:none;transform:none}
+}
 .book-pdf{min-width:44px;padding-inline:12px}
 .book-pdf svg{width:20px;height:20px}
 </style>
@@ -139,7 +152,16 @@ footer{padding:2.25rem 0 2.5rem}
     <img class="book-cover" src="/books/book-genz.jpg" width="877" height="1400" alt="AI for Gen Z book cover">
     <p class="book-credit">Originally published by the Center for Innovating the Future in 2021. Revised edition published in 2024.</p>
     <div class="book-actions">
-      <a class="book-buy" href="https://www.amazon.com/dp/0981182135" target="_blank" rel="noopener">Buy</a>
+      <details class="book-picker">
+        <summary class="book-buy">Buy</summary>
+        <div class="book-stores">
+          <nav class="book-store-flags" aria-label="Amazon storefronts">
+            <a href="https://www.amazon.ca/dp/098118216X/" aria-label="Amazon Canada" title="Amazon Canada" target="_blank" rel="noopener"><span aria-hidden="true">🇨🇦</span></a>
+            <a href="https://www.amazon.com/dp/0981182135" aria-label="Amazon United States" title="Amazon United States" target="_blank" rel="noopener"><span aria-hidden="true">🇺🇸</span></a>
+            <a href="https://www.amazon.co.uk/s?k=AI+for+Gen+Z+Ayush+Prakash" aria-label="Search Amazon UK for AI for Gen Z" title="Amazon UK" target="_blank" rel="noopener"><span aria-hidden="true">🇬🇧</span></a>
+          </nav>
+        </div>
+      </details>
       <a class="book-buy book-pdf" href="/books/ai-for-gen-z.pdf" aria-label="Download AI for Gen Z as a free PDF" title="Download free PDF" download>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="m3 14 2 2m-2 4 5-5m-5 5 2-2m16-4-2 2m2 4-5-5m5 5-2-2"/>
@@ -155,4 +177,30 @@ footer{padding:2.25rem 0 2.5rem}
   <span>Toronto &middot; Montreal</span>
   <span>&copy; 2026 Mantic Publishing</span>
 </div></footer>
+<script>
+  const picker = document.querySelector('.book-picker');
+  const buy = picker.querySelector('summary');
+
+  picker.addEventListener('pointerenter', (event) => {
+    if (event.pointerType === 'mouse') picker.open = true;
+  });
+  buy.addEventListener('click', (event) => {
+    if (event.pointerType === 'mouse' && picker.open) event.preventDefault();
+  });
+  picker.addEventListener('pointerleave', (event) => {
+    if (event.pointerType === 'mouse' && !picker.contains(document.activeElement)) picker.open = false;
+  });
+  picker.addEventListener('focusout', (event) => {
+    if (!picker.contains(event.relatedTarget) && !picker.matches(':hover')) picker.open = false;
+  });
+  picker.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && picker.open) {
+      picker.open = false;
+      buy.focus();
+    }
+  });
+  document.addEventListener('click', (event) => {
+    if (!picker.contains(event.target)) picker.open = false;
+  });
+</script>
 </body></html>
