@@ -34,6 +34,8 @@ a{color:inherit;text-decoration:none}
 header{padding:2rem 0}
 .hd{display:flex;justify-content:space-between;align-items:baseline;gap:2rem;flex-wrap:wrap}
 .hd .home{font-family:var(--grot);font-weight:700;font-size:.9375rem;letter-spacing:-.005em;text-transform:uppercase}
+.hd .home{display:inline-flex;align-items:center;gap:.5rem}
+.hd .home img{display:block;flex:none}
 .hd .meta{font-family:var(--sans);font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;
   color:var(--gray);display:flex;gap:2rem;flex-wrap:wrap}
 .hd .meta a{padding-bottom:2px;border-bottom:1px solid transparent;transition:.18s}
@@ -105,7 +107,7 @@ footer{padding:2.25rem 0 2.5rem}
 <meta name="description" content="Mantic publishes books that break the mainstream narrative. We break and build the idea with the author until the argument holds.">
 </head><body>
 <header><div class="wrap hd">
-  <a class="home" href="index.html">Mantic Publishing</a>
+  <a class="home" href="index.html"><img src="/favicon.svg?v=3" width="24" height="24" alt="">Mantic Publishing</a>
   <div class="meta">
     <a href="/books/">Books</a>
     <a href="standards.html">Standards</a>
