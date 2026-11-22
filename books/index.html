@@ -7,7 +7,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Archivo:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Archivo:wght@600;700&family=Inter:wght@400;500;600&family=Spectral:wght@300&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#FFFFFF;
@@ -106,9 +106,13 @@ footer{padding:2.25rem 0 2.5rem}
   h1.pt{margin-bottom:2.25rem}
 }
 
-.book-cover{display:block;width:min(15rem,100%);height:auto;margin:1.25rem 0}
-.book-buy{box-shadow:inset 0 -.06em 0 var(--blu)}
-.book-buy:hover{background:#EDF3FF}
+.book-feature{text-align:center;padding:clamp(2.75rem,7vw,6rem) 0;border-top:1px solid var(--rule)}
+.book-kicker{margin:0;font:400 .71875rem/1.5 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#757570}
+.book-title{margin:22px auto 0;font:300 clamp(28px,4vw,52px)/1.12 "Spectral",Georgia,serif;text-transform:uppercase;text-wrap:balance}
+.book-description,.book-credit{max-width:56ch;margin:26px auto 0;font:400 .96875rem/1.72 var(--sans);color:#757570;text-wrap:pretty}
+.book-cover{display:block;width:min(330px,72vw,100%);height:auto;margin:clamp(52px,8vw,104px) auto 0}
+.book-buy{display:inline-block;margin-top:clamp(26px,4vw,48px);padding:11px 24px;border:1px solid var(--ink);border-radius:999px;background:var(--ink);color:var(--bg);font:400 .78125rem/1.5 var(--sans);letter-spacing:.02em}
+.book-buy:hover{background:var(--bg);color:var(--ink)}
 </style>
 <title>Books &middot; Mantic Publishing</title>
 <meta name="description" content="Explore AI for Gen Z by Ayush Prakash.">
@@ -125,16 +129,14 @@ footer{padding:2.25rem 0 2.5rem}
 </div></header>
 <main class="page"><div class="wrap">
   <h1 class="pt">Books</h1>
-  <div class="blocks">
-    <section id="ai-for-gen-z">
-      <h2>AI for Gen Z</h2>
-      <p><strong>Out Now</strong></p>
-      <p>How artificial intelligence lands on the first generation that will never know life without it.</p>
-      <img class="book-cover" src="/books/book-genz.jpg" width="877" height="1400" alt="AI for Gen Z book cover">
-      <p>Originally published by the Center for Innovating the Future in 2021. Revised edition published in 2024.</p>
-      <a class="book-buy" href="https://www.amazon.com/dp/0981182135" target="_blank" rel="noopener">Buy the book</a>
-    </section>
-  </div>
+  <section class="book-feature" id="ai-for-gen-z">
+    <p class="book-kicker">Out Now</p>
+    <h2 class="book-title">AI for Gen Z</h2>
+    <p class="book-description">How artificial intelligence lands on the first generation that will never know life without it.</p>
+    <img class="book-cover" src="/books/book-genz.jpg" width="877" height="1400" alt="AI for Gen Z book cover">
+    <p class="book-credit">Originally published by the Center for Innovating the Future in 2021. Revised edition published in 2024.</p>
+    <a class="book-buy" href="https://www.amazon.com/dp/0981182135" target="_blank" rel="noopener">Buy the book</a>
+  </section>
 </div></main>
 <footer><div class="wrap ft">
   <span>Toronto &middot; Montreal</span>
